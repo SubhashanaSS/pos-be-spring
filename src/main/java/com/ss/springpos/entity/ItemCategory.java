@@ -17,6 +17,6 @@ public class ItemCategory {
     private String name;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "item")
+    @OneToMany(mappedBy = "itemCategory")
     private List<Item> items;
 }

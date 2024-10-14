@@ -1,0 +1,9 @@
+package com.ss.springpos.repository;
+
+import com.ss.springpos.entity.Item;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ItemRepository extends JpaRepository<Item, Long> {
+}
