@@ -6,6 +6,8 @@ import com.ss.springpos.service.ItemCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ItemCategoryServiceImpl implements ItemCategoryService {
 
@@ -15,5 +17,14 @@ public class ItemCategoryServiceImpl implements ItemCategoryService {
     @Override
     public ItemCategory createItemCategory(ItemCategory itemCategory){
         return itemCategoryRepository.save(itemCategory);
+    }
+    @Override
+    public List<ItemCategory> getAllItemCategories(){
+        return itemCategoryRepository.findAll();
+    }
+
+    @Override
+    public ItemCategory getItemCategoryById(Long id){
+        return itemCategoryRepository.findById(id).orElse(null);
     }
 }
