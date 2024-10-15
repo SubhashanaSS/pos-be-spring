@@ -22,7 +22,6 @@ public class Item {
 
     private String description;
 
-    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "item_cate_id")
     private ItemCategory itemCategory;
