@@ -21,8 +21,18 @@ public class Item {
     private Double price;
 
     private String description;
+    
+    private int qty;
 
     @ManyToOne
     @JoinColumn(name = "item_cate_id")
     private ItemCategory itemCategory;
+
+    @JsonIgnore
+    @OneToOne(mappedBy = "item", cascade = CascadeType.ALL)
+    private Stock stock;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "item", cascade = CascadeType.ALL)
+    private Set<OrderDetail> orderDetails;
 }
