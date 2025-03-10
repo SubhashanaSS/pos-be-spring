@@ -1,6 +1,6 @@
 package com.ss.springpos.controller;
 
-import com.ss.springpos.dto.ItemDTO;
+import com.ss.springpos.dto.ItemDto;
 import com.ss.springpos.entity.Item;
 import com.ss.springpos.entity.ItemCategory;
 import com.ss.springpos.service.ItemCategoryService;
@@ -22,7 +22,7 @@ public class ItemController {
     private ItemCategoryService itemCategoryService;
 
     @PostMapping("/items")
-    public ResponseEntity<Item> createItem(@RequestBody ItemDTO itemDTO){
+    public ResponseEntity<Item> createItem(@RequestBody ItemDto itemDTO){
         Item item = new Item();
         item.setName(itemDTO.getName());
         item.setPrice(itemDTO.getPrice());
@@ -55,7 +55,7 @@ public class ItemController {
     }
 
     @PutMapping("/items/{id}")
-    public ResponseEntity<Item> updateItem(@PathVariable Long id, @RequestBody ItemDTO itemDTO){
+    public ResponseEntity<Item> updateItem(@PathVariable Long id, @RequestBody ItemDto itemDTO){
         Item item = new Item();
         item.setName(itemDTO.getName());
         item.setPrice(itemDTO.getPrice());
